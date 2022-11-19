@@ -15,11 +15,11 @@ app.post("/eventos", (req, res) => {
   const evento = req.body;
   eventos.push(evento);
   //envia o evento para o microsserviço de lojas
-  axios.post("http://localhost:4000/eventos", evento).catch((err) => {
+  axios.post("http://lojas-clusterip:4000/eventos", evento).catch((err) => {
     console.log("Microsserviço de lojas fora do ar.");
   });
   //envia o evento para o microsserviço de produtos
-  axios.post("http://localhost:3001/eventos", evento).catch((err) => {
+  axios.post("http://produtos-clusterip:3001/eventos", evento).catch((err) => {
     console.log("Microsserviço de produtos fora do ar.");
   });
 
