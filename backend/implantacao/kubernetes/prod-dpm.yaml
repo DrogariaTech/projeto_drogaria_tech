@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: produtos-deployment
+  name: prod-deployment
 spec:
   selector:
     matchLabels:
-      app: produtos
+      app: produto
   template:
     metadata:
       labels:
-        app: produtos
+        app: produto
     spec:
       containers:
-      - name: produtos
-        image: joaosantos7293/pro
+      - name: produto
+        image: joaosantos7293/prod
         resources:
           limits:
             memory: "128Mi"
-            cpu: 1
---- #med-clusterip
+            cpu: "500m"
+--- #usu-clusterip
 apiVersion: v1
 kind: Service
 metadata:
-  name: produtos-clusterip
+  name: prod-clusterip
 spec:
   selector:
-    app: produtos
+    app: produto
   ports:
-    - name: produtos
+    - name: produto
       protocol: TCP
       port: 3001
       targetPort: 3001

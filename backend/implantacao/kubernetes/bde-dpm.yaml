@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bev-deployment
+  name: bde-deployment
 spec:
   selector:
     matchLabels:
@@ -13,16 +13,16 @@ spec:
     spec:
       containers:
       - name: beventos
-        image: joaosantos7293/bev
+        image: joaosantos7293/bde
         resources:
           limits:
             memory: "128Mi"
-            cpu: 1
+            cpu: "500m"
 --- #usu-clusterip
 apiVersion: v1
 kind: Service
 metadata:
-  name: beventos-service
+  name: bde-service
 spec:
   selector:
     app: beventos

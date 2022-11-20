@@ -17,8 +17,8 @@ spec:
         resources:
           limits:
             memory: "128Mi"
-            cpu: 1
---- #usu-clusterip
+            cpu: "500m"
+--- #med-clusterip
 apiVersion: v1
 kind: Service
 metadata:
