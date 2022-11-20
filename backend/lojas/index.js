@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 
-const {
+const { 
   LOJADB_USERNAME,
   LOJADB_PASSWORD,
   LOJADB_CLUSTER,
@@ -70,7 +70,7 @@ app.post("/lojas", async (req, res) => {
   }
 
   await axios
-    .post("http://beventos-service:10000/eventos", {
+    .post("http://bde-service:10000/eventos", {
       tipo: "LojaCriada",
       dados: { loja },
     })

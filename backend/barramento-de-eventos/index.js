@@ -19,7 +19,7 @@ app.post("/eventos", (req, res) => {
     console.log("Microsserviço de lojas fora do ar.");
   });
   //envia o evento para o microsserviço de produtos
-  axios.post("http://produtos-clusterip:3001/eventos", evento).catch((err) => {
+  axios.post("http://prod-clusterip:3001/eventos", evento).catch((err) => {
     console.log("Microsserviço de produtos fora do ar.");
   });
 

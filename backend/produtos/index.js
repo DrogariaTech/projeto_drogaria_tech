@@ -72,7 +72,7 @@ app.post("/produtos", async (req, res) => {
   }
 
   await axios
-    .post("http://beventos-service:10000/eventos", {
+    .post("http://bde-service:10000/eventos", {
       tipo: "ProdutoCriado",
       dados: { produto },
     })
